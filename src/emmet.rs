@@ -136,9 +136,7 @@ impl Display for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let attrs = self.render_attrs();
         let tag_name = self.name.red();
-
         let indent = self.get_indent();
-
         let open = format!("{0}<{tag_name}{attrs}>", indent);
         let close = format!("</{tag_name}>");
 
