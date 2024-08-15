@@ -7,8 +7,6 @@ use std::rc::{Rc, Weak};
 mod helpers;
 use helpers::{is_inline, is_self_closing};
 
-const INDENT: &str = "   ";
-
 type ParentType = Option<Weak<RefCell<Tag>>>;
 
 #[derive(Default, Debug)]
@@ -240,6 +238,6 @@ where
     }
 
     fn get_indent(&self) -> String {
-        INDENT.repeat(self.get_deep())
+        "   ".repeat(self.get_deep())
     }
 }
