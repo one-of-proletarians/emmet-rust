@@ -137,11 +137,11 @@ impl Display for Tag {
         let attrs = self.render_attrs();
         let tag_name = self.name.red();
         let indent = self.get_indent();
-        let open = format!("{0}<{tag_name}{attrs}>", indent);
+        let open = format!("{indent}<{tag_name}{attrs}>");
         let close = format!("</{tag_name}>");
 
         match self.is_self_close {
-            true => write!(f, "{1}<{0}{attrs}/>", tag_name, indent),
+            true => write!(f, "{indent}<{tag_name}{attrs}/>"),
             false => {
                 if let Some(children) = self.render_children() {
                     write!(f, "{open}\n{children}\n{indent}{close}")
