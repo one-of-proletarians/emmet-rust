@@ -180,21 +180,13 @@ impl Display for Text {
 
 impl Parent for Tag {
     fn get_parent(&self) -> Option<Rc<RefCell<Tag>>> {
-        if let Some(ref parent) = self.parent {
-            return parent.upgrade();
-        } else {
-            None
-        }
+        self.parent.as_ref().and_then(|parent| parent.upgrade())
     }
 }
 
 impl Parent for Text {
     fn get_parent(&self) -> Option<Rc<RefCell<Tag>>> {
-        if let Some(ref parent) = self.parent {
-            return parent.upgrade();
-        } else {
-            None
-        }
+        self.parent.as_ref().and_then(|parent| parent.upgrade())
     }
 }
 
