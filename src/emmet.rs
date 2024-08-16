@@ -191,8 +191,8 @@ impl Parent for Text {
 impl Deep for Tag {}
 impl Deep for Text {}
 
-impl Neighbors for Tag {}
-impl Neighbors for Text {}
+// impl Neighbors for Tag {}
+// impl Neighbors for Text {}
 
 trait Parent {
     fn get_parent(&self) -> Option<Rc<RefCell<Tag>>>;

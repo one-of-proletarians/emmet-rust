@@ -47,8 +47,5 @@ fn main() {
                 ),
         );
 
-    let h1 = Node::tag("h1").child(Node::tag("img"));
-
-    // dbg!(&h1);
     println!("{menu}");
 }
